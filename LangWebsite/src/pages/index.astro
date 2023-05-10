@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Analysis of the Great Gatsby">
+	<div id="Activity_Bar" class="relative isolate flex items-center gap-x-2 overflow-hidden bg-red-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+		<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+			<p class="text-sm leading-6 text-gray-900">
+				<strong class="font-semibold">Submitted to you Pennington!!</strong><svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg> Sorry about the tardiness, I got really behind and I hope the effort I put into this is appreciated. (all coded myself)
+			</p>
+			<button id="Penny_Mode" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Enter Penny Mode <span aria-hidden="true">&rarr;</span></button>
+		</div>
+		<div class="flex flex-1 justify-end">
+			<button id="Close_Button" type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+				<span class="sr-only">Dismiss</span>
+				<svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+				</svg>
+			</button>
+		</div>
+	</div>
+	<div id="main_background">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 ">
+			<section class="py-4 flex">
+				<div class="shadow-xl p-4 rounded-xl bg-grey border-2 border-slate-200">
+					<h1 class="font-bold text-2xl ">Introduction</h1>
+					<p class="italic">The Great Gatsby is a novel by American author F. Scott Fitzgerald, published in 1925.</p>
+					<p class="py-2"> Set in the Roaring Twenties, the story follows a mysterious millionaire by the name of Jay Gatsby as he tries to win back his lost love, Daisy Buchanan, during the decadence and excess of the Jazz Age. The novel explores themes of wealth, love, ambition, and the disillusionment of the American Dream. It has since become a classic of American literature in both the home and classrooms.</p>
+				</div>
+				<div class="w-full"/>
+				<div class="w-full"/>
+			</section>
+			<section class="py-16 flex">
+				<div class="w-full"/>
+				<div class="shadow-lg p-4 rounded-xl bg-grey border-2 border-slate-200">
+					<h1 class="font-bold text-2xl py-4">The Corruption of the American Dream</h1>
+					<h2 class="font-bold text-lg py-2">A Critique of Excess and Materialism</h2>
+					<ul class="list-disc list-inside py-2">
+						<li>Many characters in the novel are obsessed with wealth and social status.</li>
+						<li>Material possessions are seen as the key to happiness and fulfillment.</li>
+					</ul>
+					<h2 class="font-bold text-lg py-2">The Corruption of the American Dream</h2>
+					<ul class="list-disc list-inside py-2">
+						<li>The pursuit of wealth and social status corrupts the American Dream.</li>
+						<li>Hard work and determination are no longer the key to success.</li>
+					</ul>
+					<h2 class="font-bold text-lg py-2">The Tragic Story of Jay Gatsby</h2>
+					<p class="py-1">Jay Gatsby embodies the corrupted American Dream. He becomes obsessed with winning back his lost love, Daisy, through his extravagant displays of wealth and status. However, he soon realizes that his wealth and status cannot buy true love and happiness.</p>
+					<h2 class="font-bold text-lg py-2">The Buchanan's and the Corruption of Wealth</h2>
+					<p class="py-1">Daisy and Tom Buchanan also show the corruption of the American Dream through their pursuit of wealth and social status. They are willing to do whatever it takes to maintain their position in society, even if it means hurting others.</p>
+					<img class="transition ease-in-out  rounded-xl my-5 hover:scale-105" src="https://i.pinimg.com/originals/bf/78/aa/bf78aacad92c49ab501d220016a2655b.jpg" alt="A relevant image for the point" class="py-2">
+					<a href="america" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-md font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Read More about the theme <span aria-hidden="true">&rarr;</span></a>
+				</div>
+			</section>
+			<section class="py-64 flex">
+				<div class="w-1/4"></div>
+				<div class="shadow-lg p-4 rounded-xl bg-grey w-full border-2 border-slate-200 mx-auto">
+					<h1 class="font-bold text-2xl pt-4">"So we beat on, boats against the current, borne back ceaselessly into the past."</h1>
+					<p class="py-1">- Nick Carraway, Chapter 9</p>
+				</div>
+				<div class="w-1/4"></div>
+			</section>
+		</div>
+	</div>
+</Layout>
+
+<!-- create a script for the activity_bar that removes it when the x is hit -->
+<script>
+	const activityBar = document.getElementById('Activity_Bar');
+
+	if (!activityBar) {
+		throw new Error('Could not find the activity bar.');
+	}
+	const activityBarClose = activityBar.querySelector('#Close_Button');
+
+	const activityBarPenny = activityBar.querySelector('#Penny_Mode');
+
+	if (!activityBarClose) {
+		throw new Error('Could not find the close button for the activity bar.');
+	}
+
+	if (!activityBarPenny) {
+		throw new Error('Could not find the penny mode button for the activity bar.');
+	}
+
+	activityBarClose.addEventListener('click', () => {
+		activityBar.remove();
+	});
+
+	activityBarPenny.addEventListener('click', () => {
+		// play a sound
+		const audio = new Audio('https://cdn.discordapp.com/attachments/581891581364404255/1105669678937931846/vine-boom.mp3');
+		audio.play();
+
+		// search for main_background
+		const mainBackground = document.getElementById('main_background');
+
+		if (!mainBackground) {
+			throw new Error('Could not find the main background.');
+		}
+
+		// change the class of main_background to a new class
+		mainBackground.classList.add('penny_background');
+
+		//activityBar.remove();
+	});
+
+</script>
+
+<style>
+
+	.penny_background {
+		background-image: url("https://media.discordapp.net/attachments/581891581364404255/1105666428666921000/2E6394CB-3025-4437-A942-FB7A3B882685.jpg?width=503&height=671");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

@@ -24,7 +24,7 @@ const { title } = Astro.props;
 				<!-- navigation items -->
 				<nav class="flex space-x-4 mt-4">
 					<a href="/" class="text-sm font-medium text-gray-500 hover:text-gray-700">Home</a>
-					<!-- <a href="/theme" class="text-sm font-medium text-gray-500 hover:text-gray-700">Theme</a> -->
+					<a href="/movie" class="text-sm font-medium text-gray-500 hover:text-gray-700">Movie</a>
 					<a href="/america" class="text-sm font-medium text-gray-500 hover:text-gray-700">The Corruption of the American Dream</a>
 					<a href="/characters" class="text-sm font-medium text-gray-500 hover:text-gray-700">Characters</a>
 				</nav>
@@ -32,7 +32,7 @@ const { title } = Astro.props;
 		</header>
 		<slot />
 		<footer>
-			<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 border-t-2 bg-gray-150">
 				<p class="text-center text-base text-gray-400">
 					&copy; 2023 <a href="https://www.ManyBees.net" class="hover:text-gray-500">Wesley Baldwin</a>, and <a href="http://www.LunarHUE.com" class="hover:text-gray-500">LunarHUE</a>
 				</p>
@@ -60,16 +60,16 @@ const { title } = Astro.props;
 </style>
 
 <script>
-	const header = document.querySelector('#header');
+	// const header = document.querySelector('#header');
 
-	if (header) {
-	window.addEventListener('scroll', () => {
-		if (window.scrollY > 0) {
-		header.classList.add('transparent');
-		} else {
-		header.classList.remove('transparent');
-		}
-	});
-	}
+	// if (header) {
+	// window.addEventListener('scroll', () => {
+	// 	if (window.scrollY > 0) {
+	// 	header.classList.add('transparent');
+	// 	} else {
+	// 	header.classList.remove('transparent');
+	// 	}
+	// });
+	// }
 </script>
   
